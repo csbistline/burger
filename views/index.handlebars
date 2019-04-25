@@ -1,38 +1,56 @@
-<h1>Burger Time</h1>
+<div class="container d-block ">
+    <div class="row mb-4">
+        <div class="col-md text-center">
+            <img src="assets/img/tastyburger.jpg" class="img-fluid mt-2" style="max-width: 75%">
+        </div>
+    </div>
+    <div class="row text-center mt-1">
+        <div class="col-md-6">
+            <div class="h3">On the menu</div>
 
-<h2>On the menu</h2>
+            <p>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </p>
+        </div>
+        <div class="col-md-6">
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+            <div class="h3">In my belly!</div>
 
-<h2>In my belly</h2>
+            <p>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </p>
+        </div>
+    </div>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <div class="row">
+        <div class="col-md text-center">
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+            <h3>Add a Burger</h3>
+            <form class="create-form">
 
-  <div class="form-group">
-    <label for="bu">Burger Name:</label>
-    <input type="text" id="bu" name="burger_name">
-  </div>
+                <div class="form-group">
+                    {{!-- <label for="bu">Burger Name:</label><br> --}}
+                    <input type="text" class="form-control text-center" id="bu" name="burger_name">
+                </div>
 
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Uneaten
-  </div>
+                <div class="form-group form-check-inline">
+                    {{!-- <label for="devoured"><h4>Devoured?</h4></label><br> --}}
+                    <div><input type="radio" name="devoured" value="1" checked>In my belly! &nbsp &nbsp</div>
+                    <div><input type="radio" name="devoured" value="0"> On the menu</div>
+                </div>
 
-  <button type="submit">Add Burger</button>
-</form>
+                <button type="submit" class="btn btn-secondary btn-sm">Add Burger</button>
+            </form>
+        </div>
+
+
+    </div>
+</div>
