@@ -1,5 +1,5 @@
-INSERT INTO burgers (burger_name) VALUES ('Bacon Cheeseburger');
-INSERT INTO burgers (burger_name) VALUES ('BBQ Burger');
-INSERT INTO burgers (burger_name) VALUES ('Veggie Burger');
+INSERT INTO burgers (burger_name) VALUES ('Royale with Cheese');
+INSERT INTO burgers (burger_name) VALUES ('Big Kahuna Burger');
+INSERT INTO burgers (burger_name) VALUES ('Bad Muthaf---er');
 
 
